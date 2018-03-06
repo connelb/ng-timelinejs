@@ -53,7 +53,7 @@ export class TimelineComponent {
     // width:this.elementRef.container.offsetWidth,
     // width: will be 100%,
     // height: will be 100%,
-    scale_factor: 2,                    // How many screen widths wide should the timeline be at first presentation
+    scale_factor: 5,                    // How many screen widths wide should the timeline be at first presentation
     zoom_sequence: [0.5, 1, 2, 5, 9, 15], 	//[0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], // Array of Fibonacci numbers for TimeNav zoom levels http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
     layout: 'landscape',                // portrait or landscape
     timenav_position: 'top',         // timeline on top or bottom
@@ -62,7 +62,7 @@ export class TimelineComponent {
     timenav_height: 250,
     timenav_height_percentage: 100,      // Overrides timenav height as a percentage of the screen
     timenav_height_min: 250,            // Minimum timenav height
-    marker_height_min: 25,              // Minimum Marker Height
+    marker_height_min: 40,              // Minimum Marker Height
     marker_width_min: 150,              // Minimum Marker Width
     marker_padding: 10,                  // Top Bottom Marker Padding
     start_at_slide: 1,
@@ -126,76 +126,6 @@ export class TimelineComponent {
     this.listenTimeline();
     this.timelineModel = new TimelineModel();
   }
-  
-/*   getData(){
-  setTimeout(() => {
-    this.getcsv.getCSV(this.url).subscribe(data=> {
-      let results = {};
-      let events = [];
-      //console.log('what is data[key]?', this.url, data);
-      for (let key in data){
-        //console.log('what is data[key]?', data[key]);
-        events.push({
-          "start_date": {
-            'hour':data[key]['Hour'],
-            'minute':data[key]['Minute'],
-            "format": data[key]['Display Date']
-          },
-          "end_date":{
-            'hour':data[key]['End Hour'],
-            'minute':data[key]['End Minute'],
-            "format": data[key]['Display Date']
-          },
-          'group':data[key]['Group'],
-          "text": {
-            'headline': data[key]['Headline'],
-            'text':data[key]['Text']
-          },
-           "media": {
-                "caption": data[key]['Media Caption'],
-                "credit": data[key]['Media Credit'],
-                //"url": data[key]['Url'],
-                "thumb": ""
-            },
-          'Type':data[key]['Type'],
-          'Background':data[key]['Background']
-        })
-      }
-  
-      results = {
-      "title": {
-                "media": {
-                    "caption": "",
-                    "credit": "",
-                    "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
-                    "thumb": 	""
-                },
-                  "text": {
-                      "headline": "Welcome to TimelineJS",
-                      "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
-                  }
-          },
-        "events":events,
-        //"eras":"",
-        "scale": "human",
-        }
-   return results;
-    });
-  }, 900);
-} */
-/* 
-    public getCSV(url): Observable<any>{
-    let results = new Array();
-    return Observable.create((observer)=>{
-      papa.parse(url,{
-        download:true,
-        header:true,
-        complete: function (results, file){
-          observer.next(results.date)
-        }
-      })
-    })
-  } */
 
   private listenTimeline(){
     var self = this;
@@ -209,66 +139,6 @@ export class TimelineComponent {
       }
     });
   }
-
-  //ngOnInit(){}
-
-/*  ngOnInit(){
-    
-    setTimeout(() => {
-
-    this.getcsv.getCSV(this.url).subscribe(data=> {
-      //let events = [];
-      console.log('what is data[key]?', this.url, data);
-      for (let key in data){
-        console.log('what is data[key]?', data[key]);
-        this.events.push({
-          "start_date": {
-            'hour':data[key]['Hour'],
-            'minute':data[key]['Minute'],
-            "format": data[key]['Display Date']
-          },
-          "end_date":{
-            'hour':data[key]['End Hour'],
-            'minute':data[key]['End Minute'],
-            "format": data[key]['Display Date']
-          },
-          'group':data[key]['Group'],
-          "text": {
-            'headline': data[key]['Headline'],
-            'text':data[key]['Text']
-          },
-           "media": {
-                "caption": data[key]['Media Caption'],
-                "credit": data[key]['Media Credit'],
-                "url": data[key]['url'],
-                "thumb": ""
-            },
-          'Type':data[key]['Type'],
-          'Background':data[key]['Background']
-        })
-      }
-  
-      this.results = {
-      "title": {
-                "media": {
-                    "caption": "",
-                    "credit": "",
-                    "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
-                    "thumb": 	""
-                },
-                  "text": {
-                      "headline": "Welcome to TimelineJS",
-                      "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
-                  }
-          },
-        "events":this.events,
-        //"eras":"",
-        "scale": "human",
-        }
-   
-    });
-  }, 900);
-  } */
   
   ngAfterViewInit(){
     this.viewInited = true;
