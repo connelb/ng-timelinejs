@@ -1,15 +1,5 @@
 <h1>Finding Problems</h1>
 <h4>Kit type #1</h4>
 <div style='height: 600px; width: 1400px; border:1px solid #ccc;'>
-    <timeline [events]="results.events" [url]="'./assets/data/sample1.csv'" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
-</div>
-
-<h4>Kit type #2</h4>
-<div style='height: 600px; width: 1400px; border:1px solid #ccc;'>
-    <timeline [events]="results.events" [url]="'./assets/data/sample2.csv'" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
-</div>
-
-<h4>Kit type #3</h4>
-<div style='height: 600px; width: 1400px; border:1px solid #ccc;'>
-    <timeline [events]="results.events" [url]="'./assets/data/sample3.csv'" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
+    <timeline [events]="results.events" [filepath]="'./assets/data/sample1.csv'" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
 </div>

@@ -11,14 +11,14 @@ export class GetcsvService {
 
   constructor(private papa: PapaParseService) { }
 
-  public getCSV(url): Observable<any>{
+  public getCSV(url): Observable<any>{   
     let results = new Array();
     return Observable.create((observer)=>{
       papa.parse(url,{
         download:true,
         header:true,
         complete: function (results, file){
-          observer.next(results.date)
+          observer.next(results.data)
         }
       })
     })

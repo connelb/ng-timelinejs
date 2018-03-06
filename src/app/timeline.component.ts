@@ -13,21 +13,22 @@ import { GetcsvService } from './getcsv.service';
 declare var TL: any;
 @Component({
   selector: 'timeline',
-  template: `<div [id]="id" class="timeline">{{results.events|json}}</div>`,
+  template: `<div [id]="id" class="timeline"></div>`,
   styles: ['.timeline{height:100%;width:100%;padding: 0px;margin: 0px;}']
 })
-export class TimelineComponent implements OnInit{
+export class TimelineComponent {
   @Input() events:Array<any> = [];
   @Input() scale:string = '';
   @Input() title:Object = {};
-  @Input() url:string;
+  @Input() filepath:string= '';
   @Output() clicked = new EventEmitter();
-  results:any = {};
+  @Input() results:any = {};
+  url:string = '';
   //scale:string = 'human';
   timeline:any = null;
   id:string = null;
   viewInited = false;
-  //temp:any;
+  temp:any;
   //temp1:any;
   private timelineModel:TimelineModel = null;
   private selectedIndex:number = 0;
@@ -119,15 +120,71 @@ export class TimelineComponent implements OnInit{
     private renderer:Renderer2,
     private papa: PapaParseService,
     private getcsv: GetcsvService
-  ) { 
+  ) {
+    //this.getData();  
     this.id = 'timeline_'+Math.floor((Math.random() * 10000) + 1);
     this.listenTimeline();
     this.timelineModel = new TimelineModel();
-    //this.getCSV('./assets/data/sample.csv').subscribe(data=>this.temp=data);
-
   }
-
-/*   public getCSV(url): Observable<any>{
+  
+/*   getData(){
+  setTimeout(() => {
+    this.getcsv.getCSV(this.url).subscribe(data=> {
+      let results = {};
+      let events = [];
+      //console.log('what is data[key]?', this.url, data);
+      for (let key in data){
+        //console.log('what is data[key]?', data[key]);
+        events.push({
+          "start_date": {
+            'hour':data[key]['Hour'],
+            'minute':data[key]['Minute'],
+            "format": data[key]['Display Date']
+          },
+          "end_date":{
+            'hour':data[key]['End Hour'],
+            'minute':data[key]['End Minute'],
+            "format": data[key]['Display Date']
+          },
+          'group':data[key]['Group'],
+          "text": {
+            'headline': data[key]['Headline'],
+            'text':data[key]['Text']
+          },
+           "media": {
+                "caption": data[key]['Media Caption'],
+                "credit": data[key]['Media Credit'],
+                //"url": data[key]['Url'],
+                "thumb": ""
+            },
+          'Type':data[key]['Type'],
+          'Background':data[key]['Background']
+        })
+      }
+  
+      results = {
+      "title": {
+                "media": {
+                    "caption": "",
+                    "credit": "",
+                    "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
+                    "thumb": 	""
+                },
+                  "text": {
+                      "headline": "Welcome to TimelineJS",
+                      "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
+                  }
+          },
+        "events":events,
+        //"eras":"",
+        "scale": "human",
+        }
+   return results;
+    });
+  }, 900);
+} */
+/* 
+    public getCSV(url): Observable<any>{
     let results = new Array();
     return Observable.create((observer)=>{
       papa.parse(url,{
@@ -153,7 +210,9 @@ export class TimelineComponent implements OnInit{
     });
   }
 
-  ngOnInit(){
+  //ngOnInit(){}
+
+/*  ngOnInit(){
     
     setTimeout(() => {
 
@@ -209,7 +268,7 @@ export class TimelineComponent implements OnInit{
    
     });
   }, 900);
-  }
+  } */
   
   ngAfterViewInit(){
     this.viewInited = true;
@@ -224,14 +283,65 @@ export class TimelineComponent implements OnInit{
     try{
       if(!this.viewInited){return;}
       var self = this;
-      var subscription:Subscription = this.getObject().subscribe((object:any)=>{
-          try{
-            if(typeof object !== 'string'){
-              if (object.events.length == 0){return;}
+      //var subscription:Subscription = this.getObject().subscribe((object:any)=>{
+        console.log('this url in update trying to find m.url',this.filepath)
+      var subscription:Subscription = this.getcsv.getCSV(this.filepath).subscribe(data=> {
+          let results = {};
+          let events = [];
+          //console.log('what is data[key]?', this.url, data);
+          for (let key in data){
+            //console.log('what is data[key]?', data[key]);
+            events.push({
+              "start_date": {
+                'hour':data[key]['Hour'],
+                'minute':data[key]['Minute'],
+                "format": data[key]['Display Date']
+              },
+              "end_date":{
+                'hour':data[key]['End Hour'],
+                'minute':data[key]['End Minute'],
+                "format": data[key]['Display Date']
+              },
+              'group':data[key]['Group'],
+              "text": {
+                'headline': data[key]['Headline'],
+                'text':data[key]['Text']
+              },
+                "media": {
+                  "url": "",
+                  "caption": "",
+                  "credit": ""
+                },
+              'Type':data[key]['Type'],
+              'Background':data[key]['Background']
+            })
+          }
+      
+          results = {
+          "title": {
+                    "media": {
+                        "caption": "",
+                        "credit": "",
+                        "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
+                        "thumb": 	""
+                    },
+                      "text": {
+                          "headline": "Welcome to TimelineJS",
+                          "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
+                      }
+              },
+            "events":events,
+            //"eras":"",
+            "scale": "human",
             }
-            self.timeline = new TL.Timeline(self.id, object,this.defaultOptions);
+
+          try{
+            if(typeof results !== 'string'){
+              if (results['events'].length == 0){return;}
+            }
+            self.timeline = new TL.Timeline(self.id, results,this.defaultOptions);
             //self.currentEvents = object.events;
-            self.currentEvents = this.events;
+            self.currentEvents = results['events'];
             let temp = self.currentEvents[0]?self.currentEvents[0]:null;
             self.setSelected(temp);
           }catch(e){console.warn(e);}
@@ -245,22 +355,46 @@ export class TimelineComponent implements OnInit{
       );
     }catch(e){console.warn(e);}
   }
+
+  /*
+orginal
+          try{
+            if(typeof object !== 'string'){
+              if (object.events.length == 0){return;}
+            }
+            self.timeline = new TL.Timeline(self.id, object,this.defaultOptions);
+            //self.currentEvents = object.events;
+            self.currentEvents = this.results.events;
+            let temp = self.currentEvents[0]?self.currentEvents[0]:null;
+            self.setSelected(temp);
+          }catch(e){console.warn(e);}
+        },
+        (error:any)=>{console.warn(error);},
+        () => {
+          if(subscription){
+            subscription.unsubscribe();
+          }
+        }
+      );
+    }catch(e){console.warn(e);}
+  }
+  */
   
   // replace with
-  private getObject(): Observable<any> {
+/*   private getObject(): Observable<any> {
         //if (this.url !== '') {
           //return this.http.get(this.url);
         //}
         return new Observable((observer: Observer<any>) => {
           try {
             observer.next({
-              scale: this.scale,
-              events: this.events
+              scale: this.results.scale,
+              events: this.results.events
             });
             observer.complete();
           } catch (e) {console.warn(e);}
         });
-      }
+      } */
       
   private setSelected(selected:Array<any>){
     if(selected){

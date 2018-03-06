@@ -10,24 +10,33 @@ import * as papa from 'papaparse';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 
+import { GetcsvService } from './getcsv.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  name:string;
-  event:any = {};
+export class AppComponent{
+  //name:string;
+  event:any;
+  scale:any;
+  title:any;
+  filepath:any;
+  //events:any;
   //data:any = {};
   //data1:any = {};
   result:any;
-  results:any;
-  url:string;
+  results:any= {};
+  //public url:string;
 
-  constructor() {
+  constructor(
+    private getcsv: GetcsvService
+  ) {
     //this.data = cosmological;
 
   }
 
+ 
 /*   public getCSV(url): Observable<any>{
     let results = new Array();
     return Observable.create((observer)=>{
