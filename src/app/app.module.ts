@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { TimelineComponent } from './timeline.component';
 import { PapaParseService } from 'ngx-papaparse';
+import { GetcsvService } from './getcsv.service';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { PapaParseService } from 'ngx-papaparse';
   imports: [
     BrowserModule, HttpModule
   ],
-  providers: [PapaParseService],
+  providers: [PapaParseService, GetcsvService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

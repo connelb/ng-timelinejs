@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
@@ -8,22 +8,27 @@ import { PapaParseService } from 'ngx-papaparse';
 
 import {TimelineModel} from './timeline.model';
 import * as papa from 'papaparse';
+import { GetcsvService } from './getcsv.service';
 
 declare var TL: any;
 @Component({
   selector: 'timeline',
-  template: `<div [id]="id" class="timeline"></div>`,
+  template: `<div [id]="id" class="timeline">{{results.events|json}}</div>`,
   styles: ['.timeline{height:100%;width:100%;padding: 0px;margin: 0px;}']
 })
-export class TimelineComponent {
+export class TimelineComponent implements OnInit{
   @Input() events:Array<any> = [];
-  @Input() url:string = '';
+  @Input() scale:string = '';
+  @Input() title:Object = {};
+  @Input() url:string;
   @Output() clicked = new EventEmitter();
-  scale:string = 'human';
+  results:any = {};
+  //scale:string = 'human';
   timeline:any = null;
   id:string = null;
   viewInited = false;
-  temp:any;
+  //temp:any;
+  //temp1:any;
   private timelineModel:TimelineModel = null;
   private selectedIndex:number = 0;
   private selected = {};
@@ -47,24 +52,24 @@ export class TimelineComponent {
     // width:this.elementRef.container.offsetWidth,
     // width: will be 100%,
     // height: will be 100%,
-    scale_factor: 2000,                    // How many screen widths wide should the timeline be at first presentation
+    scale_factor: 2,                    // How many screen widths wide should the timeline be at first presentation
     zoom_sequence: [0.5, 1, 2, 5, 9, 15], 	//[0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], // Array of Fibonacci numbers for TimeNav zoom levels http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
-    layout: 'portrait',                // portrait or landscape
+    layout: 'landscape',                // portrait or landscape
     timenav_position: 'top',         // timeline on top or bottom
-    optimal_tick_width: 100000,            // optimal distance (in pixels) between ticks on axis
+    optimal_tick_width: 1000,            // optimal distance (in pixels) between ticks on axis
     //base_class: '',
     timenav_height: 250,
     timenav_height_percentage: 100,      // Overrides timenav height as a percentage of the screen
-    timenav_height_min: 150,            // Minimum timenav height
-    marker_height_min: 10,              // Minimum Marker Height
-    marker_width_min: 50,              // Minimum Marker Width
-    marker_padding: 5,                  // Top Bottom Marker Padding
-    start_at_slide: 0,
-    menubar_height: 60,
-    skinny_size: 150,
-    relative_date: true,               // Use momentjs to show a relative date from the slide.text.date.created_time field
+    timenav_height_min: 250,            // Minimum timenav height
+    marker_height_min: 25,              // Minimum Marker Height
+    marker_width_min: 150,              // Minimum Marker Width
+    marker_padding: 10,                  // Top Bottom Marker Padding
+    start_at_slide: 1,
+    menubar_height: 120,
+    skinny_size: 650,
+    relative_date: false,               // Use momentjs to show a relative date from the slide.text.date.created_time field
     use_bc: false,                      // Use declared suffix on dates earlier than 0
-    duration: 1000,                     // Slider animation duration
+    duration: 500,                     // Slider animation duration
     ease: TL.Ease.easeInOutQuint,       // Slider animation type
     dragging: true,
     trackResize: true,
@@ -92,7 +97,7 @@ export class TimelineComponent {
     //marker_width_min:100,
     //marker_padding:5,
     //start_at_slide:0,
-    start_at_end:true,
+    start_at_end:false,
     //menubar_height:0,
     //use_bc:false,
     //duration:1000,
@@ -104,6 +109,7 @@ export class TimelineComponent {
     //language:"en",
     ga_property_id:null,
     track_events: ['back_to_start', 'nav_next', 'nav_previous', 'zoom_in', 'zoom_out'],
+    //track_events: [ 'nav_next', 'nav_previous'],
     //script_path: ""
   };
   
@@ -111,15 +117,17 @@ export class TimelineComponent {
     private elementRef:ElementRef, 
     private http: Http,
     private renderer:Renderer2,
-    private papa: PapaParseService
+    private papa: PapaParseService,
+    private getcsv: GetcsvService
   ) { 
     this.id = 'timeline_'+Math.floor((Math.random() * 10000) + 1);
     this.listenTimeline();
     this.timelineModel = new TimelineModel();
-    this.getCSV('./assets/data/sample.csv').subscribe(data=>this.temp=data);
+    //this.getCSV('./assets/data/sample.csv').subscribe(data=>this.temp=data);
+
   }
 
-  public getCSV(url): Observable<any>{
+/*   public getCSV(url): Observable<any>{
     let results = new Array();
     return Observable.create((observer)=>{
       papa.parse(url,{
@@ -130,8 +138,8 @@ export class TimelineComponent {
         }
       })
     })
-  }
-  
+  } */
+
   private listenTimeline(){
     var self = this;
     this.listenerFn = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => {
@@ -143,6 +151,64 @@ export class TimelineComponent {
         return;
       }
     });
+  }
+
+  ngOnInit(){
+    
+    setTimeout(() => {
+
+    this.getcsv.getCSV(this.url).subscribe(data=> {
+      //let events = [];
+      console.log('what is data[key]?', this.url, data);
+      for (let key in data){
+        console.log('what is data[key]?', data[key]);
+        this.events.push({
+          "start_date": {
+            'hour':data[key]['Hour'],
+            'minute':data[key]['Minute'],
+            "format": data[key]['Display Date']
+          },
+          "end_date":{
+            'hour':data[key]['End Hour'],
+            'minute':data[key]['End Minute'],
+            "format": data[key]['Display Date']
+          },
+          'group':data[key]['Group'],
+          "text": {
+            'headline': data[key]['Headline'],
+            'text':data[key]['Text']
+          },
+           "media": {
+                "caption": data[key]['Media Caption'],
+                "credit": data[key]['Media Credit'],
+                "url": data[key]['url'],
+                "thumb": ""
+            },
+          'Type':data[key]['Type'],
+          'Background':data[key]['Background']
+        })
+      }
+  
+      this.results = {
+      "title": {
+                "media": {
+                    "caption": "",
+                    "credit": "",
+                    "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
+                    "thumb": 	""
+                },
+                  "text": {
+                      "headline": "Welcome to TimelineJS",
+                      "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
+                  }
+          },
+        "events":this.events,
+        //"eras":"",
+        "scale": "human",
+        }
+   
+    });
+  }, 900);
   }
   
   ngAfterViewInit(){
@@ -164,7 +230,8 @@ export class TimelineComponent {
               if (object.events.length == 0){return;}
             }
             self.timeline = new TL.Timeline(self.id, object,this.defaultOptions);
-            self.currentEvents = object.events;
+            //self.currentEvents = object.events;
+            self.currentEvents = this.events;
             let temp = self.currentEvents[0]?self.currentEvents[0]:null;
             self.setSelected(temp);
           }catch(e){console.warn(e);}
@@ -179,10 +246,11 @@ export class TimelineComponent {
     }catch(e){console.warn(e);}
   }
   
-      private getObject(): Observable<any> {
-        if (this.url !== '') {
-          return this.http.get(this.url);
-        }
+  // replace with
+  private getObject(): Observable<any> {
+        //if (this.url !== '') {
+          //return this.http.get(this.url);
+        //}
         return new Observable((observer: Observer<any>) => {
           try {
             observer.next({
@@ -216,3 +284,72 @@ export class TimelineComponent {
   }
 
 }
+
+/*   public getCSV(this.url).subscribe(data=> {
+    let events = [];
+    for (let key in data){
+      events.push({
+        "start_date": {
+          //'year':data[key]['Year'],
+          //'month':data[key]['Month'],
+          //'day':data[key]['Day'],
+          //'Time':data[key]['Time'],
+          'hour':data[key]['Hour'],
+          'minute':data[key]['Minute'],
+          //"second": data[key]['Second'],
+          //'millisecond':data[key]['Millisecond'],
+          "format": data[key]['Display Date']
+        },
+        "end_date":{
+          //'year':data[key]['End Year'],
+          //'month':data[key]['End Month'],
+          //'day':data[key]['End Day'],
+          //'End Time':data[key]['End Time'],
+          'hour':data[key]['End Hour'],
+          'minute':data[key]['End Minute'],
+          //"second": data[key]['End Second'],
+          //'millisecond':data[key]['End Millisecond'],
+          "format": data[key]['Display Date']
+        },
+        'group':data[key]['Group'],
+        "text": {
+          'headline': data[key]['Headline'],
+          'text':data[key]['Text']
+        },
+         "media": {
+              "caption": data[key]['Media Caption'],
+              "credit": data[key]['Media Credit'],
+              "url": data[key]['url'],
+              "thumb": ""
+          },
+           "media": {
+              //"caption": data[key]['Media Caption'],
+              //"credit": data[key]['Media Credit'],
+              //"url": data[key]['Media'],
+              //"thumb": data[key]['Media Thumbnail']
+          },  
+        'Type':data[key]['Type'],
+        'Background':data[key]['Background']
+      })
+    }
+
+    this.results = {
+    "title": {
+              "media": {
+                  "caption": "",
+                  "credit": "",
+                  "url": "http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg",
+                  "thumb": 	""
+              },
+                "text": {
+                    "headline": "Welcome to TimelineJS",
+                    "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
+                }
+        },
+      "events":events,
+      //"eras":"",
+      "scale": "human",
+
+      }
+ 
+  }); */
