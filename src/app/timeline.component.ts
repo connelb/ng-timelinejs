@@ -8,6 +8,7 @@ import { PapaParseService } from 'ngx-papaparse';
 
 import {TimelineModel} from './timeline.model';
 import * as papa from 'papaparse';
+import * as _ from 'lodash';
 import { GetcsvService } from './getcsv.service';
 
 declare var TL: any;
@@ -24,7 +25,6 @@ export class TimelineComponent {
   @Output() clicked = new EventEmitter();
   @Input() results:any = {};
   url:string = '';
-  //scale:string = 'human';
   timeline:any = null;
   id:string = null;
   viewInited = false;
@@ -53,20 +53,20 @@ export class TimelineComponent {
     // width:this.elementRef.container.offsetWidth,
     // width: will be 100%,
     // height: will be 100%,
-    scale_factor: 5,                    // How many screen widths wide should the timeline be at first presentation
+    scale_factor: 10,                    // How many screen widths wide should the timeline be at first presentation
     zoom_sequence: [0.5, 1, 2, 5, 9, 15], 	//[0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89], // Array of Fibonacci numbers for TimeNav zoom levels http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/fibtable.html
     layout: 'landscape',                // portrait or landscape
-    timenav_position: 'top',         // timeline on top or bottom
+    timenav_position: 'bottom',         // timeline on top or bottom
     optimal_tick_width: 1000,            // optimal distance (in pixels) between ticks on axis
     //base_class: '',
     timenav_height: 250,
-    timenav_height_percentage: 100,      // Overrides timenav height as a percentage of the screen
-    timenav_height_min: 250,            // Minimum timenav height
-    marker_height_min: 40,              // Minimum Marker Height
-    marker_width_min: 150,              // Minimum Marker Width
-    marker_padding: 10,                  // Top Bottom Marker Padding
+    timenav_height_percentage: 25,      // Overrides timenav height as a percentage of the screen
+    timenav_height_min: 150,            // Minimum timenav height
+    marker_height_min: 30,              // Minimum Marker Height
+    marker_width_min: 50,              // Minimum Marker Width
+    marker_padding: 5,                  // Top Bottom Marker Padding
     start_at_slide: 1,
-    menubar_height: 120,
+    menubar_height: 100,
     skinny_size: 650,
     relative_date: false,               // Use momentjs to show a relative date from the slide.text.date.created_time field
     use_bc: false,                      // Use declared suffix on dates earlier than 0
@@ -78,40 +78,13 @@ export class TimelineComponent {
     slide_padding_lr: 100,              // padding on slide of slide
     slide_default_fade: '50%',          // landscape fade
     language: 'en',
-    //debug: false,
-    //height:this._el.container.offsetHeight,
-    //width:this._el.container.offsetWidth,
     is_embed:false,
     hash_bookmark:false,
-    //default_bg_color:F0000,
-    //scale_factor:2,
-    //initial_zoom:?,
-    //zoom_sequence:[0.5, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89],
-    //timenav_position:"bottom",
-    //optimal_tick_width:100,
     base_class:"tl-timeline",
-    //timenav_height:150,
-    //timenav_height_percentage:25,
     timenav_mobile_height_percentage:40,
-    //timenav_height_min:150,
-    //marker_height_min:30,
-    //marker_width_min:100,
-    //marker_padding:5,
-    //start_at_slide:0,
     start_at_end:false,
-    //menubar_height:0,
-    //use_bc:false,
-    //duration:1000,
-    //ease: TL.Ease.easeInOutQuint,
-    //dragging:true,
-    //trackResize:true,
-    //slide_padding_lr:100,
-    //slide_default_fade:"0%",
-    //language:"en",
     ga_property_id:null,
     track_events: ['back_to_start', 'nav_next', 'nav_previous', 'zoom_in', 'zoom_out'],
-    //track_events: [ 'nav_next', 'nav_previous'],
-    //script_path: ""
   };
   
   constructor(
@@ -130,7 +103,8 @@ export class TimelineComponent {
   private listenTimeline(){
     var self = this;
     this.listenerFn = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => {
-      let element = event.srcElement.className;
+      //let element = event.srcElement.className;
+      let element = event.className;
       if (self.targets.indexOf(element) === -1){return;}
       self.setSelected(self.timelineModel.getNewSelection(event.path, self.currentEvents, self.selectedIndex, event.srcElement.className));
       if(!self.selected){
@@ -160,32 +134,65 @@ export class TimelineComponent {
           let events = [];
           //console.log('what is data[key]?', this.url, data);
           for (let key in data){
-            //console.log('what is data[key]?', data[key]);
-            events.push({
-              "start_date": {
-                'hour':data[key]['Hour'],
-                'minute':data[key]['Minute'],
-                "format": data[key]['Display Date']
-              },
-              "end_date":{
-                'hour':data[key]['End Hour'],
-                'minute':data[key]['End Minute'],
-                "format": data[key]['Display Date']
-              },
-              'group':data[key]['Group'],
-              "text": {
-                'headline': data[key]['Headline'],
-                'text':data[key]['Text']
-              },
-                "media": {
-                  "url": "",
-                  "caption": "",
-                  "credit": ""
+            if(data[key]['Headline']){
+            if(data[key]['Video Link']){
+              events.push({
+                "start_date": {
+                  'hour':data[key]['Hour'],
+                  'minute':data[key]['Minute'],
+                  "format": data[key]['Display Date']
                 },
-              'Type':data[key]['Type'],
-              'Background':data[key]['Background']
-            })
+                "end_date":{
+                  'hour':data[key]['End Hour'],
+                  'minute':data[key]['End Minute'],
+                  "format": data[key]['Display Date']
+                },
+                'group':data[key]['Group'],
+                "text": {
+                  'headline': data[key]['Headline'],
+                  'text': "<video width='200' height='200' controls>"+
+                  "<source src="+data[key]['Video Link']+ " type='video/mp4'></video>"+ "<span style='background-color:"+data[key]['Background']+"'>"+data[key]['Text']+"</span>"+"<img style='max-height: 100px; max-width: 100px;' src='"+data[key]['Picture Link'] +"' class='media-image'>"
+                },
+                  "media": {
+                    "url": '',
+                    "caption": data[key]['Media Caption'],
+                    "credit": data[key]['Media Credit'],
+                    "thumbnail":data[key]['Media Thumbnail']
+                  },
+                'Type':data[key]['Type'],
+                'Background':data[key]['Background']
+              })
+            }else{
+              events.push({
+                "start_date": {
+                  'hour':data[key]['Hour'],
+                  'minute':data[key]['Minute'],
+                  "format": data[key]['Display Date']
+                },
+                "end_date":{
+                  'hour':data[key]['End Hour'],
+                  'minute':data[key]['End Minute'],
+                  "format": data[key]['Display Date']
+                },
+                'group':data[key]['Group'],
+                "text": {
+                  'headline': data[key]['Headline'],
+                  'text': "<p>"+data[key]['Text']+"</p>"+"<img style='max-height: 100px; max-width: 100px;' src='"+data[key]['Picture Link'] +"' class='media-image'>"
+                },
+                  "media": {
+                    "url": '',
+                    "caption": data[key]['Media Caption'],
+                    "credit": data[key]['Media Credit'],
+                    "thumbnail":data[key]['Media Thumbnail']
+                  },
+                'Type':data[key]['Type'],
+                'Background':data[key]['Background']
+              })
+
+            }
           }
+        }
+            
       
           results = {
           "title": {
@@ -196,8 +203,8 @@ export class TimelineComponent {
                         "thumb": 	""
                     },
                       "text": {
-                          "headline": "Welcome to TimelineJS",
-                          "text": "<p>TimelineJS is an open-source tool that enables you to build visually-rich interactive timelines and is available in 40 languages.</p><p>You're looking at an example of one right now.</p><p>Click on the arrow to the right to learn more.</p>"
+                          "headline": "Finding the Problem",
+                          "text": "<p>Mapping the therapy to better understanding </p>"
                       }
               },
             "events":events,
