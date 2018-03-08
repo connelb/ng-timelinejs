@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+video { 
+    max-height:300px;
+    max-width:500px;
+    height:auto;
+ }
+
+ .slider .slider-item .content .content-container .text {
+    width: 40%;
+    max-width: 50%;
+    min-width: 120px;
+    display: table-cell;
+    vertical-align: middle;
+}
