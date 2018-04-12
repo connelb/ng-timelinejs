@@ -1,0 +1,6 @@
+<span *ngIf= "currentData1" >Number of touchpoints:{{currentData1.length|json}}</span> 
+<mat-progress-bar *ngIf = !currentData1
+class="example-margin"
+mode="indeterminate">
+</mat-progress-bar>
+<div [id]="id" class="timeline"></div>

@@ -1,74 +1,294 @@
-Hour,Minute,End Hour,End Minute,Display Date,Group,Headline,Text,Picture Link,Video Link,Media,Media Credit,Media Caption,Media Thumbnail,Type,Background,Project Title,Project Description,Project Url
-,,,,,,,,,,,,,,Title,,Finding the Problem(s),Mapping the therapy to better target innovation opportunities,http://2.bp.blogspot.com/-dxJbW0CG8Zs/TmkoMA5-cPI/AAAAAAAAAqw/fQpsz9GpFdo/s1600/voyage-dans-la-lune-1902-02-g.jpg
-0,5,0,10,H:M,Prior to surgery,What are the steps prior to the surgery?,<p>**Yellow indicates an opportunity** Someone schedule appointment.  What is the preparation required?  </p>,,,,,,,,,,,
-0,10,0,15,H:M,Preparation,Surgery Preparation,<p>description here...  </p>,,,,,,,,Yellow,,,
-0,15,0,40,H:M,Dissection,Primary incision (epidermis layer),<p>description here...  </p>,,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_5.mp4,,,,,,#333333,,,
-0,40,0,50,H:M,Dissection,"Catheter Placement: pre insertion of catheter
-",<p>description here...  </p>,,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_prep%20for%20placement.mp4,,,,,,,,,
-0,50,1,10,H:M,Dissection,"Catheter Placement: Prepare catheter with guide wire/ Insert catheter/ Remove guide wire
-",<p>description here...  </p>,,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_wire%20guide.mp4,,,,,,,,,
-1,10,1,20,H:M,Dissection,"Catheter Placement: Prepare catheter with guide wire/ Insert catheter/ Remove guide wire/ Test catheter with NACL
-",<p>description here...  </p>,,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_5.mp4,,,,,,,,,
-1,20,1,40,H:M,Dissection,"Catheter Flush
-","1L heparinized saline
+Month,Day,Hour,Minute,End Month,End Day,End Hour,End Minute,Display Date,Group,Event,Event Step,Text,Video Link,Media,Media Credit,Media Caption,Media Thumbnail,Type,Background,Project Title,Project Description,Project Url
+,,,,,,,,,,,,,,,,,,Title,,Observations/ Finding the Need(s),Mapping the therapy to better target innovation opportunities,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/Day%20in%20the%20life%20of%20tutorial.mp4
+1,1,0,0,1,7,0,0,mm-dd,Nephrologist,Facilitate Fresh Start,Education- Initial diagonsis,"There are multiple tests used to diagnose kidney disease. 
+The first is the urine 'dip stick' test. In this test, strips of paper covered with small squares of chemical reagent are dipped in a urine specimen and the resulting color of each small square of chemical reagent is read against a chart on the bottle. These tests identify the presence of blood cells and protein in the urine. The presence of blood cells and protein in the urine indicate that there is damage to the nephrons.
+The second type of test is a blood test. This measures the blood levels of urea, which is a waste by-product from the breakdown of dietary protein, and creatinine a waste product produced by the muscles. Urea and creatinine levels in the blood are good indicators of kidney function.
+Creatinine levels are thought to be more reliable than blood urea levels, or BUN, as blood urea levels can vary depending upon diet, some medications, the presence of bleeding and so forth. Creatinine, on the other hand, is a product of muscle metabolism. An individual's muscle mass typically remains fairly stable from day to day, so the creatinine level in the blood is more or less constant. 
+",https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/signs%20and%20symptoms.mp4,,,,,,,,,
+,,,,,,,,,Patient,Peritonitis,Peritonitis,peritonitis players,,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/images/peritonitis%20detection.png,,,,,,,,
+1,1,0,0,1,7,0,0,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Helps pt with modality selection,Helps pt with modality selection,,,,,,,,,,
+1,7,0,0,1,7,8,0,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Goes with pt to surgery ,Goes with pt to surgery ,,,,,,,,,,
+2,15,0,0,2,15,8,0,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Attends PD  training,Attends PD  training,,,,,,,,,,
+2,25,0,0,2,27,0,0,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Helps pt with starting PD at home,Helps pt with starting PD at home,,,,,,,,,,
+3,1,0,0,12,1,0,0,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Assists pt with exchanges when needed,Assists pt with exchanges when needed,,,,,,,,,,
+3,1,1,1,12,1,1,1,mm-dd,Family/ Caregiver,Facilitate Fresh Start,Goes with pt to appointment,Goes with pt to appointment,,,,,,,,,,
+1,1,0,0,1,7,0,0,mm-dd,Patient,Facilitate Fresh Start,Researches dialysis and modalities,Researches dialysis and modalities,,,,,,,,,,
+1,7,0,0,1,7,8,0,mm-dd,Patient,Facilitate Fresh Start,Selects modality,"Selects modality.  
+If patient presented acutely, they were often started on hemo even if their modality of choice in pre-dialysis clinic had been PD (Polson and Iverson, 2006).  A number of reasons for this were identified, including ease of insertion of hemo access and nephrologists feeling in control as their training allowed them to insert a hemo catheter, dialyze and discharge a patient on their first renal replacement therpay visit without relying on other members of the multidisclinary team or requiring intervention by a renal surgeon.",,,,,,,,,,
+1,7,0,0,1,7,8,0,mm-dd,Patient,Catheter Surgery,Undergoes catheter surgery,Undergoes catheter surgery,,,,,,,,,,
+1,8,0,0,2,0,0,0,mm-dd,Patient,Catheter Surgery,Post op recovery,Post op recovery (2-3 weeks). Changes dressings on regular basis,,,,,,,,,,
+2,5,0,0,2,5,8,0,mm-dd,Patient,Starting therapy,Receives initial delivery,<p>Receives initial delivery </p>,,,,,,,,,,
+2,15,0,0,2,15,8,0,mm-dd,Patient,Starting therapy,Experiential training occurs,<p>Experiential training occurs </p>,,,,,,,,,,
+2,25,0,0,2,27,0,0,mm-dd,Patient,Starting therapy,Starts independent treatment at home (calls nurse as needed),<p>Starts independent treatment at home (calls nurse as needed) </p>,,,,,,,,,,
+3,1,0,0,12,1,0,0,mm-dd,Patient,Starting therapy,Continues treatment at home (calls nurse as needed),<p>Continues treatment at home (calls nurse as needed)</p>,,,,,,,,,,
+3,25,0,0,3,25,0,0,mm-dd,Patient,Starting therapy,Returns to clinic for the first time,<p>Returns to clinic for the first time</p>,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Patient,Starting therapy,Continues therapy and clinic visits,<p>Continues therapy and clinic visits </p>,,,,,,,,,,
+1,1,4,0,1,7,8,30,mm-dd,Nephrologist,Starting therapy,Recommends dialysis education to pt for modality selection,<p>Recommends dialysis education to pt for modality selection  </p>,,,,,,,Yellow,,,
+1,1,0,0,1,7,0,0,mm-dd,Nephrologist,Starting therapy,Determines pt modality/suitability Sets pt expectations,<p>Determines pt modality/suitability Sets pt expectations  </p>,,,,,,,Yellow,,,
+1,1,0,0,1,7,0,0,mm-dd,Nurse,Starting therapy,Determines pt modality/suitability Sets pt expectations,<p>Determines pt modality/suitability Sets pt expectations  </p>,,,,,,,Yellow,,,
+2,25,0,0,2,27,0,0,mm-dd,Nephrologist,Starting therapy,Monitors pt recovery,<p>Monitors pt recovery  </p>,,,,,,,Yellow,,,
+3,25,0,0,3,25,0,0,mm-dd,Nephrologist,Starting therapy,Monitors lab tests,<p>Monitors lab tests </p>,,,,,,,Yellow,,,
+3,25,0,0,3,25,0,0,mm-dd,Nephrologist,Starting therapy,Orders lab tests,<p>Orders lab tests </p>,,,,,,,Yellow,,,
+3,25,0,0,12,30,0,0,mm-dd,Nephrologist,Catheter Surgery,Ongoing monitoring of therapy,<p>Ongoing monitoring of therapy  </p>,,,,,,,Yellow,,,
+1,7,8,50,1,7,9,0,mm-dd,Surgeon,Catheter Surgery,Primary incision (epidermis layer),<p>description here...  </p>,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_5.mp4,,,,,,#333333,,,
+1,7,9,0,1,7,9,30,mm-dd,Surgeon,Catheter Surgery,"Catheter Placement: pre insertion of catheter
+",<p>description here...  </p>,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_prep%20for%20placement.mp4,,,,,,,,,
+1,7,9,30,1,7,10,0,mm-dd,Surgeon,Catheter Surgery,"Catheter Placement: Prepare catheter with guide wire/ Insert catheter/ Remove guide wire
+",<p>description here...  </p>,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_wire%20guide.mp4,,,,,,,,,
+1,7,10,0,1,7,10,30,mm-dd,Surgeon,Catheter Surgery,"Catheter Placement: Prepare catheter with guide wire/ Insert catheter/ Remove guide wire/ Test catheter with NACL
+",<p>description here...  </p>,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_5.mp4,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Surgeon,Catheter Surgery,Irrigation step to ensure functional catheter,"1L heparinized saline
 Within 72 hours of surgery
 Repeat weekly until dialysis begins
-Use CAPD exchange guidelines for sterility",,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_Catheter%20Flush.mp4,,,,,,,,,
-1,40,2,0,H:M,Post Operation,Dressing & Exit-Site Maintenance,"<ul>
-   <li>
-      <div style=""text-align: left;"">Do not remove for 7 days after surgery</div>
-   </li>
-   <li>
-      <div style=""text-align: left;"">Keep clean, dry and intact</div>
-   </li>
-   <li>
-      <div style=""text-align: left;"">Contact dialysis nurse ifdressing becomes soilded or loose</div>
-   </li>
-   <li>
-      <div style=""text-align: left;"">Do not shower, bathe or swim</div>
-   </li>
-   <li>
-      <div style=""text-align: left;"">Resume showering one month postoperatively</div>
-   </li>
-   <li>
-      <div style=""text-align: left;"">Keep sterile gauze dressing over wound as it heals</div>
-   </li>
-</ul>",,https://worksites.connect.inbaxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_Dressing%20Maintenance.mp4,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,
+Use CAPD exchange guidelines for sterility",https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_Catheter%20Flush.mp4,,,,,,,,,
+1,8,0,0,1,8,0,0,mm-dd,Nurse,Exit Site Care,Dressing & Exit-Site Maintenance,Instructional training ,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/guided%20catheter%20placement_Dressing%20Maintenance.mp4,,,,,,,,,
+1,8,0,0,1,8,0,0,mm-dd,Patient,Exit Site Care,Dressing & Exit-Site Maintenance,How often? Daily?,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/exit%20site%20dressing.mp4,,,,,,,,,
+1,1,0,0,1,7,0,0,mm-dd,Nurse,Starting therapy,Gives detailed info on modality selection,,,,,,,,,,,
+1,8,0,0,2,0,0,0,mm-dd,Nurse,Starting therapy,Provides pre and post-op support,<p>Provides pre and post-op support</p>,,,,,,,,,,
+1,8,0,0,2,0,0,0,mm-dd,Nurse,Starting therapy,Orders training and home supplies (for CAPD or APD),<p>Orders training and home supplies (for CAPD or APD)</p>,,,,,,,,,,
+2,15,0,0,2,15,8,0,mm-dd,Nurse,Starting therapy,Trains pt on PD (assists with pt exchanges),<p>Trains pt on PD (assists with pt exchanges)</p>,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Nurse,Starting therapy,Calls/visits patient to provide additional support,<p>Calls/visits patient to provide additional support</p>,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Nurse,Starting therapy,Follow up calls pt 2 times/wk,<p>Follow up calls pt 2 times/wk</p>,,,,,,,,,,
+1,1,0,0,1,7,0,0,mm-dd,Dietician,Starting therapy,Discusses changes in diet and exercise needed for dialysis,<p>Discusses changes in diet and exercise needed for dialysis</p>,,,,,,,,,,
+1,8,0,0,2,0,0,0,mm-dd,Dietician,Starting therapy,Educates pt about diet and exercise restrictions,<p>Educates pt about diet and exercise restrictions</p>,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Dietician,Starting therapy,Reviews bloodwork and notifies physician if adjustments are necessary,<p>Reviews bloodwork and notifies physician if adjustments are necessary</p>,,,,,,,,,,
+1,1,0,0,1,7,0,0,mm-dd,Baxter,Starting therapy,Clinical educators train nurses,<p>Clinical educators train nurses</p>,,,,,,,,,,
+1,8,0,0,2,0,0,0,mm-dd,Baxter,Starting therapy,Contacts pt to set up intial delivery,<p>Contacts pt to set up intial delivery</p>,,,,,,,,,,
+2,5,0,0,2,5,8,0,mm-dd,Baxter,Starting therapy,Makes initial delivery to pt,<p>Makes initial delivery to pt</p>,https://worksites.baxter.com/sites/RnD_JIB/Documents/Day%20in%20the%20Life%20of%20_/videos/PD%20solution%20storage.mp4,,,,,,,,,
+3,1,0,0,12,1,0,0,mm-dd,Baxter,Starting therapy,Answers any pt questions about delivery/ordering,<p>Answers any pt questions about delivery/ordering,,,,,,,,,,
+3,1,0,0,12,1,0,0,mm-dd,Baxter,Starting therapy,Delivers solutions 1-2 times per month. Pt may call with questions regarding delivery/ordering/traveling,<p>Delivers solutions 1-2 times per month. Pt may call with questions regarding delivery/ordering/traveling,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Dietician,Starting therapy,Calls patient between clinic visits to check in after bloodwork,<p>Calls patient between clinic visits to check in after bloodwork,,,,,,,,,,
+2,15,0,0,2,15,8,0,mm-dd,Social Worker,Starting therapy,Performs assessment and refers pt to resources,Performs assessment and refers pt to resources,,,,,,,,,,
+3,25,0,0,3,25,0,0,mm-dd,Social Worker,Starting therapy,Provides addtl info on PD and homecare Offers emotional support,Provides addtl info on PD and homecare Offers emotional support,,,,,,,,,,
+3,25,0,0,12,30,0,0,mm-dd,Social Worker,Starting therapy,Provides addtl info on PD and homecare,Provides addtl info on PD and homecare,,,,,,,,,,
+5,1,0,0,5,1,0,0,mm-dd,Patient,Drainage Issue,Drainage Issue- go to clinic,Calls nurse with issue and goes to clinic,,,,,,,,,,
+5,1,0,0,5,1,0,0,mm-dd,Nurse,Drainage Issue,Drainage Issue- assessment,"Nurse Assessment- Does an exchange, if possible.  Observes “threads” (fibrin)",,,,,,,,,,
+5,1,0,0,5,1,0,0,mm-dd,Nephrologist,Drainage Issue,Drainage Issue-assessment,"Nephrologist consulation- Explores Interventions, address constipations.  50% of time may do an X-ray screening test (is this typical, an option?). May assume Fibrin induced blockage, and perscribe heparin.  May consider TPA Tissue Plasma Actvace?, injection to dissolve clot.  1-2ml.  “Cathflow” $100.
+
+",,,,,,,,,,
+5,2,0,0,5,7,0,0,mm-dd,Patient,Drainage Issue,Drainage Issue-treatment,"Add heparin to bag, for how long? 1-2x/ week by needle.
+",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Nurse specialist (Catheter Placement),Urgent-start PD Catheter Placement,Urgent-start PD Catheter Placement,development of a customized Safe Surgery Check List and the introduction of a bladder ultrasound prior to each procedure.,,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,Percutaneous versus open placement of peritoneal dialysis catheters,,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,"Despite its several advantages, peritoneal dialysis (PD) is currently an underutilized form of renal placement therapy (1). The problem of PD catheter insertion is one of the main reasons for this underutilization, and emphasis has been placed on catheter placement by a nephrologist to increase PD utilization and to improve patient survival (2). In Korea, 30% of PD catheter placements were performed by a nephrologist, and from among several techniques, the classical trocar technique is still widely used by those nephrologists (3). However, serious complications such as bowel perforation or hemoperitoneum occasionally occur with the use of this method (4), and sometimes the PD catheter is inserted into the preperitoneal space. These problems make nephrologists reluctant to personally perform PD catheter insertions. Furthermore, few surgeons are committed to PD catheter insertion, which means that patients must wait for PD (2). 
+
+Other PD catheter insertion methods include the surgical, the peritoneoscopic, and the modified Seldinger techniques (4). Of those techniques, the modified Seldinger method, using a peel-away introducer sheath kit (“peel-away sheath method”), is the technique most easily mastered by nephrologists and has results comparable to those with the other techniques. However, peel-away kits have not been available in Korea because of low domestic needs, resulting in a lack of imports. To allow nephrologists to insert a PD catheter safely and successfully in this environment, we developed an alternative to the peel-away sheath method, using a hemodialysis (HD) catheter. The present study compares the outcomes of PD catheter insertion using our method and using the classical trocar technique
+",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,"constipation, catheter migration outside the pelvis, or omental wrapping",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,"For patients with outflow obstruction, current guidelines suggest using conservative measures first, and then, if those measures fail and the catheter has migrated, a repositioning attempt. A variety of approaches for reposition have been described: peritoneoscopy, fluoroscopy-guided techniques (2-4), laparoscopy (5), and conventional surgery. Peritoneoscopy and fluoroscopy-guided methods are feasible for nephrologists and are minimally invasive.",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Drainage Issue,,"Before reposition is attempted, malfunctioning catheters are managed with catheter flush attempts and, for patients with clinical or radiographic evidence of constipation, with additional prescription of a bowel-cleansing product (Picolax: Ferring Laboratories, Saint-Prex, Switzerland) on top of permanent laxative treatment (senna and sodium docusate). Repositioning is performed in the PD procedure room under cardiorespiratory monitoring. Patients are not premedicated with analgesics or sedatives, with the exception of the very occasional patient requesting sedation. All manipulations are performed using strict aseptic techniques. The abdominal wall surface is prepared with chlorhexidine solution and isolated with sterile drapes. Antibacterial prophylaxis with a single dose of intravenous vancomycin (1 g) is given 1 hour before manipulation.",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,"advantages of the fluoroscopic techniques; it is simple and minimally invasive, it can be performed on an outpatient basis, and it allows for quick catheter use",,,,,,,,,,
+1,7,10,30,1,7,11,0,mm-dd,Interventional radiologist/ Nephrologist?,Urgent-start PD Catheter Placement,,"Moreover, it avoids the need for radiologic guidance. Thus, it can be a useful alternative repositioning technique for migrated Tenckhoff catheters inserted under local anesthetic.",,,,,,,,,,
+4,1,17,0,4,2,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,2,17,0,4,3,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,3,17,0,4,4,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,4,17,0,4,5,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,5,17,0,4,6,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,6,17,0,4,7,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,7,17,0,4,8,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,8,17,0,4,9,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,9,17,0,4,10,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,10,17,0,4,11,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,11,17,0,4,12,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,12,17,0,4,13,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,13,17,0,4,14,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,14,17,0,4,15,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,15,17,0,4,16,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,16,17,0,4,17,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,17,17,0,4,18,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,18,17,0,4,19,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,19,17,0,4,20,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,20,17,0,4,21,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,21,17,0,4,22,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,22,17,0,4,23,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,23,17,0,4,24,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,24,17,0,4,25,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,25,17,0,4,26,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,26,17,0,4,27,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,27,17,0,4,28,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,28,17,0,4,29,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,29,17,0,4,30,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+4,30,17,0,5,1,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,2,17,0,5,2,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,3,17,0,5,3,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,4,17,0,5,4,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,5,17,0,5,5,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,6,17,0,5,6,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,7,17,0,5,7,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,8,17,0,5,8,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,9,17,0,5,9,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,10,17,0,5,10,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,11,17,0,5,11,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,12,17,0,5,12,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,13,17,0,5,13,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,14,17,0,5,14,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,15,17,0,5,15,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,16,17,0,5,16,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,17,17,0,5,17,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,18,17,0,5,18,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,19,17,0,5,19,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,20,17,0,5,20,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,21,17,0,5,21,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,22,17,0,5,22,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,23,17,0,5,23,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,24,17,0,5,24,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,25,17,0,5,25,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,26,17,0,5,26,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,27,17,0,5,27,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,28,17,0,5,28,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,29,17,0,5,29,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+5,30,17,0,6,1,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,1,17,0,6,2,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,2,17,0,6,3,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,3,17,0,6,4,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,4,17,0,6,5,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,5,17,0,6,6,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,6,17,0,6,7,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,7,17,0,6,8,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,8,17,0,6,9,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,9,17,0,6,10,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,10,17,0,6,11,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,11,17,0,6,12,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,12,17,0,6,13,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,13,17,0,6,14,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,14,17,0,6,15,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,15,17,0,6,16,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,16,17,0,6,17,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,17,17,0,6,18,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,18,17,0,6,19,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,19,17,0,6,20,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,20,17,0,6,21,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,21,17,0,6,22,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,22,17,0,6,23,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,23,17,0,6,24,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,24,17,0,6,25,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,25,17,0,6,26,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,26,17,0,6,27,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,27,17,0,6,28,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,28,17,0,6,29,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,29,17,0,6,30,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+6,30,17,0,7,1,7,0,dd-mm-yy,Patient,APD exchanges,Exchange,APD exchange,,,,,,,,,,
+1,7,8,0,1,7,9,0,mm-dd,Nurse,Urgent-start PD Catheter Placement,Patient is assessed.  Labs performed.  Symptoms of kidney failure identified,Patient is assessed.  Labs performed.  Symptoms of kidney failure identified,,,,,,,,,,
+1,7,10,0,1,7,11,0,mm-dd,Surgeon,Urgent-start PD Catheter Placement,Temporary vascular access catheters,Temporary vascular access catheters,,,,,,,,,,
+1,7,9,0,1,7,10,0,mm-dd,Nephrologist,Urgent-start PD Catheter Placement,Initial assessment,Initial assessment,,,,,,,,,,
+1,7,8,0,1,7,9,0,mm-dd,Nurse,Urgent-start PD Catheter Placement,Contacts PD management staff for consensus to be a PD candidate,Contacts PD management staff for consensus to be a PD candidate,,,,,,,,,,
+1,7,11,0,1,7,13,0,mm-dd,Nurse,Urgent-start PD Catheter Placement,Get clearence to schedule for PD catheter placement,Get clearence to schedule for PD catheter placement,,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Surgeon,Urgent-start PD Catheter Placement,Surgeon places PD catheter,Surgeon places PD catheter,,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Surgeon,Urgent-start PD Catheter Placement,operating room scheduling,operating room scheduling,,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"PRE-PROCEDURE PREPARATION: A history and physical examination are performed to
+uncover known conditions—such as hernias, presence of
+abdominal mesh, organomegaly, prior kidney transplantation,
+or past abdominal surgeries—that might complicate
+placement. If the patient is on anticoagulants, they
+are held 5 days before the procedure.",,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"conscious sedation will be administered,
+the patient is kept fasting for at least 6 hours before the
+procedure.",,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Patient,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"Signed consent for PD catheter placement is
+obtained from the patient after information has been
+communicated about the procedure: its benefits, risks,
+and possible alternatives; and the option to choose not
+to proceed.",,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Family/ Caregiver,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"Signed consent for PD catheter placement is
+obtained from the patient after information has been
+communicated about the procedure: its benefits, risks,
+and possible alternatives; and the option to choose not
+to proceed.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"1 Hour before treatment: Pre-procedure antibiotics are administered
+intravenously:",,,,,,,,,,
+1,10,8,0,1,10,11,0,mm-dd,Patient,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION: ,"The patient is asked to fully empty
+the bladder, and if the patient has bladder dysfunction,
+a Foley catheter can be used to ensure more complete
+bladder drainage.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"Abdominal Site Marking: Marking of the entry and exit
+sites for the catheter is performed in the pre-procedure
+area. Site marking can be performed using a nonsterile
+double-cuff PD catheter or a commercially available stencil.
+The belt line is noted in sitting and standing position
+while the patient is fully dressed.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,PRE-PROCEDURE PREPARATION,"The catheter is prepared by being placed into a surgical
+bowl filled with saline. The polyester fiber cuffs are
+manually compressed to extrude any trapped air that
+might inhibit tissue ingrowth.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE: The
+patient is placed supine on the angiographic table in
+the procedure room, and preliminary ultrasonography of
+the abdomen is performed to help determine the safest
+puncture site (entry site) and to plan for the subcutaneous
+tunnel and catheter exit site.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE:  The safest puncture site should be determined by
+grayscale ultrasonography, Doppler ultrasonography,
+and fluoroscopy. To minimize the risk of inadvertent
+bowel puncture, preliminary grayscale ultrasonography
+is used to determine the site on the anterior abdominal
+wall that has no bowel loops underneath or that has the
+maximum separation between the anterior abdominal
+wall and the bowel loops.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE:   All planned sites should be marked with
+a pen.
+The hair on the anterior abdominal wall in the involved
+area is then shaved. Shaving with a razor is considered
+to create a higher risk for subsequent infection, and so
+medical-grade hair clippers are used for shaving.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE:   The abdomen is then prepped with an antiseptic scrub and
+sterilely draped to provide exposure to the initial puncture
+site and the expected exit site.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE: Mild or moderate sedation is given using intravenous
+midazolam hydrochloride and fentanyl citrate. Vital signs
+(pulse, blood pressure, oxygen saturation) and bedside
+electrocardiography are continuously monitored during
+the procedure by the operating physician and a dedicated
+nurse. Anesthesiology assistance is not routinely
+required,",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,CATHETER PLACEMENT PROCEDURE,"CATHETER PLACEMENT PROCEDURE: The safest initial puncture site is again confirmed by
+ultrasonography. Local anesthesia using 1% lidocaine
+is infiltrated within the skin and the subcutaneous and
+deep tissues of the anterior abdominal wall at the anticipated
+puncture site.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"Ultrasound Guidance/ Fluoroscopic Guidance3/21/2018 After ultrasound-guided entry
+into the peritoneal cavity, approximately 3 – 5 mL of
+nonionic contrast material can be injected and visualized
+under fluoroscopy",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"If bowel perforation occurs, the procedure is terminated
+to avoid catheter infection and peritonitis. The
+patient can be managed conservatively or treated with
+oral ciprofloxacin 500 mg twice daily for 2 weeks, after
+which the patient can return for a second attempt.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"After visual confirmation of successful entry into the
+peritoneal cavity, a 0.018-in. nitinol wire that accompanies
+the original micro-introducer kit is threaded into
+the peritoneal cavity",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"With the nitinol wire in
+place, the 21-gauge needle is then exchanged over the
+nitinol wire for the 4 or 5-French microsheath",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"The wire and inner stiffener of the sheath are then
+removed, and contrast may again be injected through
+the sheath to confirm that the sheath is in the peritoneal
+cavity. A 0.035-in. guide wire is advanced through the sheath and directed toward the
+pelvis under fluoroscopic guidance. The 0.035-in. wire is ideal because it allows for manipulation
+around the bowel and is stiff enough to permit
+catheter traction during final placement.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"The 4-French microsheath is then exchanged over the
+wire for a 6-French introducer sheath). Contrast can again be injected through the
+sidearm of the introducer sheath to confirm the location
+of the sheath in the peritoneal cavity.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"A 2-cm to 4-cm incision is made at the entry site of
+the introducer sheath, and blunt dissection down to the
+rectus abdominis muscle is made using a finger or curved
+hemostat",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"To separate the bowel loops and
+facilitate passage of the catheter into the peritoneum,
+300 – 1000 mL of normal saline can be infused through
+the sidearm of the introducer sheath",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"The sheath is then removed, and the tract is serially
+dilated over the wire with an 8-French, a 12-French, and
+then a 14-French dilator . Dilatation should occur under
+fluoroscopic visualization, and the dilators should be
+directed caudally toward the pelvic cavity in the same
+direction as the original needlestick so as to avoid the
+wire and dilator being pushed into the subcutaneous
+tissue superficial to the rectus abdominis muscle, rather
+than through the muscle into the peritoneal cavity.",,,,,,,,,,
+1,10,7,0,1,8,11,0,mm-dd,Interventional radiologist,Urgent-start PD Catheter Placement,GUIDANCE,"With or without serial dilation, a 16-French, 15-cm
+pull-apart sheath is advanced into the peritoneal cavity over
+the wire in the deep pelvic direction",,,,,,,,,,

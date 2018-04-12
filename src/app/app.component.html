@@ -1,3 +1,60 @@
-<div style='height: 600px; width: 100%; border:1px solid #ccc;'>
-    <timeline [events]="results.events" [filepath]="'./assets/data/sample1.csv'" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="menuEvents.push('open!')" (closed)="menuEvents.push('close!')">
+   <!--    [(value)]="selected2"   -->
+ <!--    <mat-form-field>  -->
+
+    <mat-selection-list *ngIf= 'myEvents' class="example-radio-group" #list [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)">
+        <mat-list-option *ngFor="let tta of myEvents" [value]="tta.name">
+            {{tta.name}}
+        </mat-list-option>
+    </mat-selection-list>
+
+
+<!--     <div>
+        Selected: {{ selectedOptions | json }}
+      </div> -->
+
+<!--     <mat-selection-list   class="example-radio-group">
+        <div *ngFor="let myEvent of myEvents">
+            <mat-list-option [(value)]="selected2">
+                {{myEvent.name}}
+              </mat-list-option>
+        </div>
+    </mat-selection-list> -->
+   <!--  </mat-form-field> -->
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <mat-toolbar>
+          <button mat-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <span><b>Customer Experience Mapping-</b> <i>A Day in the Life of...</i></span>
+        </mat-toolbar>
+    <div class="test">
+      <timeline [events]="results" [myEvent]="selected2" [filepath]="myPath" [title]="results.title" [scale]="results.scale" (clicked)="setResult($event)"></timeline>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <span>
+  <mat-form-field>
+    <mat-select [(value)]="selected2" placeholder="Select an event ..." multiple>
+      <mat-option (click)="selectEvent(myEvent)" *ngFor="let myEvent of myEvents" [value]="myEvent">{{myEvent.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</span> -->
+
+
+
+
+
+<!-- <span><mat-form-field >
+    <mat-select [(value)]="selected1" placeholder="Day in the Life of a ..."  multiple>
+      <mat-option  (click)="selectActor(actor)" *ngFor="let actor of actors" [value]="actor">{{actor.name}}</mat-option>
+    </mat-select>
+  </mat-form-field></span> -->
+
+
+
+
+<!-- [myFilter]="selected1" -->
